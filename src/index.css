@@ -1,0 +1,10 @@
+/**{ margin: 0; padding: 0; border: 0; box-sizing: border-box;}*/
+
+.todo-app {
+    margin: 2rem auto 0 auto;
+    max-width: 400px;
+}
+  
+.top-panel {
+    margin: 1rem 0;
+}

@@ -7,11 +7,7 @@ export default class AddItem extends Component {
         label: ""
     }
 
-    onLabelChange = event => {
-        this.setState({
-            label: event.target.value
-        })
-    }
+    onLabelChange = event => this.setState({ label: event.target.value })
 
     render() {
         const { onClickAdd } = this.props

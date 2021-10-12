@@ -1,9 +1,8 @@
-import TodoListItem from "../todo-list-item/todo-list-item"
+import { TodoListItem } from "../todo-list-item/todo-list-item"
 import "./todo-list.css"
 
-export const TodoList = ({ todos, onClickDelete, onToggleImportant, onToggleDone }) => {
-    return (
-        <ul className="list-group todo-list">
+export const TodoList = ({ todos, onClickDelete, onToggleImportant, onToggleDone }) => (
+    <ul className="list-group todo-list">
         {todos.map(item => {
             const {id, ...props} = item
             return (
@@ -17,6 +16,5 @@ export const TodoList = ({ todos, onClickDelete, onToggleImportant, onToggleDone
                 </li>
             )
         })}
-        </ul>
-    )
-}
+    </ul>
+)

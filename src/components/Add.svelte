@@ -1,5 +1,5 @@
 <script>
-  import {getContext, onDestroy} from "svelte"
+  import {getContext} from "svelte"
 
   let todoLabel = ""
 
@@ -9,6 +9,7 @@
     const id = Math.random().toString(36).substring(2, 9)
     const item = {id, label: todoLabel, important: false, done: false}
     $todoList = [...$todoList, item]
+    todoLabel = ""
   }
 </script>
 

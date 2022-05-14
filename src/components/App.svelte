@@ -3,6 +3,7 @@
 	import {todoList, filter} from "../stores"
 	
 	import Header from "./Header.svelte"
+	import Search from "./Search.svelte"
 	import TodoList from "./TodoList.svelte"
 	import Add from "./Add.svelte"
 
@@ -11,5 +12,6 @@
 </script>
 
 <Header/>
+<Search/>
 <TodoList/>
 <Add/>

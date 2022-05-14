@@ -1,7 +1,7 @@
 <script>
   import {getContext} from "svelte"
 
-  let todoList = getContext("todo-list")
+  const todoList = getContext("todo-list")
   const done = $todoList.filter(item => item.done)
   
   const listLength = $todoList.length

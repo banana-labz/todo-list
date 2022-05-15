@@ -32,8 +32,8 @@
     height: 26px;
     background-color: transparent;
     border: 1px solid #CED4DA;
-    border-radius: 0.25em;
-    padding: 0.25em 0.5em;
+    border-radius: 4px;
+    padding: 4px 8px;
     cursor: pointer;
   }
 </style>

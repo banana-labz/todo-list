@@ -25,13 +25,14 @@ button:hover {
 }
 
 input {
-	padding: 4px 4px;
+	width: calc(340px - 104px - 4px * 3);
+	padding: 4px 8px;
 	border: 1px solid #CED4DA;
 	border-radius: 4px;
 	transition: 180ms box-shadow ease-in-out;
 }
 
-input:focus { 
+input:focus {
 	box-shadow: 0 0 0 2px #17A2B8;
 	outline: transparent;
 }

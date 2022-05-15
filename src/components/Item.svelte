@@ -43,6 +43,7 @@
   .todo-list-item-actions {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     gap: 4px;
   }
 

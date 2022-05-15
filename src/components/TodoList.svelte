@@ -68,7 +68,5 @@
     flex-direction: column;
     justify-content: center;
     gap: 1px;
-    margin-bottom: 8px;
-    margin-top: 8px;
   }
 </style>

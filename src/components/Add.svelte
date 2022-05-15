@@ -27,6 +27,6 @@
     gap: 8px;
   }
   .add-todo-button {
-    width: 200px;
+    width: 104px;
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-	export let id, label, important, done
+	export let id, label, important, done, onDone, onImportant, onDelete
 
   import Delete from "svelte-awesome/icons/trashO"
   import Done from "svelte-awesome/icons/check"
@@ -7,14 +7,23 @@
 
   import IconButton from "./IconButton.svelte"
 
+  const getClass = (important, done) => {
+    let result = ""
+    if (important)
+      result += " " + "important"
+    if (done)
+      result += " " + "done"
+    return result
+  }
+
 </script>
 
 <span class="todo-list-item">
-  <span>{label}</span>
+  <span class={"todo-list-item-label" + getClass(important, done)}>{label}</span>
   <div class="todo-list-item-actions">
-    <IconButton color="#17A2B8" icon={Important}/>
-    <IconButton color="#28A745" icon={Done}/>
-    <IconButton color="#DC3545" icon={Delete}/>
+    <IconButton color="#17A2B8" icon={Important} onClick={onImportant}/>
+    <IconButton color="#28A745" icon={Done} onClick={onDone}/>
+    <IconButton color="#DC3545" icon={Delete} onClick={onDelete}/>
   </div>
 </span>
 
@@ -23,15 +32,27 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    border: 1px solid #CED4DA;
-    border-radius: 4px;
+    align-items: center;
+    gap: 4px;
+    outline: 1px solid #CED4DA;
     padding: 4px;
+  }
+  
+  .todo-list-item-label {
+    overflow: hidden;
   }
 
   .todo-list-item-actions {
     display: flex;
     flex-direction: row;
     gap: 4px;
+  }
+
+  .important {
+    font-weight: bold;
+  }
+
+  .done {
+    text-decoration: line-through;
   }
 </style>

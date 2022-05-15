@@ -1,10 +1,14 @@
 <script>
-  export let color, icon
+  export let color, icon, onClick
 
   import Icon from "svelte-awesome"
 </script>
 
-<button class="icon-button" style="--color: {color}">
+<button
+  class="icon-button"
+  style="--color: {color}"
+  on:click={onClick}
+>
   <Icon data={icon}/>
 </button>
 

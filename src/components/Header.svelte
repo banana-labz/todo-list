@@ -2,15 +2,17 @@
   import {getContext} from "svelte"
 
   const todoList = getContext("todoList")
-  const done = $todoList.filter(item => item.done)
   
-  const listLength = $todoList.length
-  const doneLength = done.length
+  const getDescriptionText = (todoList) => {
+    const done = todoList.filter(item => item.done).length
+    const total = todoList.length
+    return `${done} done, ${total - done} to go`
+  }
 </script>
 
 <div class="header">
   <h2>Todo List</h2>
-  <p>{doneLength} done, {listLength - doneLength} to go</p>
+  <p>{getDescriptionText($todoList)}</p>
 </div>
 
 <style>
@@ -18,5 +20,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 </style>

@@ -3,7 +3,7 @@
 
   let todoLabel = ""
 
-  let todoList = getContext("todo-list")
+  let todoList = getContext("todoList")
 
   const handleAddTodo = () => {
     const id = Math.random().toString(36).substring(2, 9)

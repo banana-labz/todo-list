@@ -2,23 +2,26 @@
   import {getContext} from "svelte"
   import Item from "./Item.svelte"
 
-  const todoList = getContext("todo-list")
-  const pattern = getContext("filter")
+  const todoList = getContext("todoList")
+  const searchPattern = getContext("pattern")
 
-  const filterTodoListByLabel = (list, pattern) => (
-    pattern.length > 0 ? list.filter(({label}) => {
-      const lcaseLabel = label.toLowerCase()
+  const filterTodoList = (list, pattern) => {
+    if (pattern.length === 0) {
+      return list
+    }
+    else {
       const lcasePattern = pattern.toLowerCase()
-      return lcaseLabel.search(lcasePattern) !== -1
-    }) : list
-  )
-
+      return list.filter(({label}) => (
+        label.toLowerCase().search(lcasePattern) !== -1
+      ))
+    }
+  }
 </script>
 
 <ul>
-	{#each filterTodoListByLabel($todoList, $pattern) as item}
+	{#each filterTodoList($todoList, $searchPattern) as item}
 		<li>
-      <Item {item}/>
+      <Item {...item}/>
     </li>
 	{/each}
 </ul>

@@ -1,7 +1,7 @@
 <script>
   import {getContext} from "svelte"
 
-  let filter = getContext("filter")
+  let searchPattern = getContext("pattern")
 </script>
 
-<input bind:value={$filter} placeholder="search"/>
+<input bind:value={$searchPattern} placeholder="search"/>

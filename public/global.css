@@ -1,7 +1,37 @@
 * {
+	position: relative;
 	margin: 0;
 	padding: 0;
 	border: 0;
 	box-sizing: border-box;
 	list-style: none;
+}
+
+button {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 28px;
+	padding: 4px;
+	border-radius: 4px;
+	background-color: transparent;
+	border: 1px solid #CED4DA;
+}
+
+button:hover {
+	transition: 0.5s;
+	background-color: #CED4DA;
+}
+
+input {
+	padding: 4px 4px;
+	border: 1px solid #CED4DA;
+	border-radius: 4px;
+	transition: 180ms box-shadow ease-in-out;
+}
+
+input:focus { 
+	box-shadow: 0 0 0 2px #17A2B8;
+	outline: transparent;
 }

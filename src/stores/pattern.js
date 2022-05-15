@@ -1,3 +1,5 @@
 import {writable} from "svelte/store"
 
-export const pattern = writable("")
+const pattern = writable("")
+
+export default pattern

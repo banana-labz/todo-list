@@ -4,14 +4,31 @@
 
   const todoList = getContext("todoList")
   const searchPattern = getContext("pattern")
+  const filter = getContext("filter")
 
-  const filterTodoList = (list, pattern) => {
+  const filterTodoList = (list, pattern, filter) => {
+    let result = []
+    switch (filter) {
+      case "Active": {
+        result = list.filter(item => !item.done)
+        break
+      }
+      case "Done": {
+        result = list.filter(item => item.done)
+        break
+      }
+      default: {
+        result = list
+        break
+      }
+    }
+
     if (pattern.length === 0) {
-      return list
+      return result
     }
     else {
       const lcasePattern = pattern.toLowerCase()
-      return list.filter(({label}) => (
+      return result.filter(({label}) => (
         label.toLowerCase().search(lcasePattern) !== -1
       ))
     }
@@ -33,7 +50,7 @@
 </script>
 
 <ul class="todo-list">
-	{#each filterTodoList($todoList, $searchPattern) as item}
+	{#each filterTodoList($todoList, $searchPattern, $filter) as item}
 		<li>
       <Item
         {...item}
@@ -51,5 +68,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 1px;
+    margin-bottom: 8px;
+    margin-top: 8px;
   }
 </style>

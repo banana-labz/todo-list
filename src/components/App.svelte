@@ -1,7 +1,8 @@
 <script>
   import {setContext} from "svelte"
-  import {todoList, pattern, filter} from "../stores"
-
+  import todoList from "../stores/todoList"
+  import pattern from "../stores/pattern"
+  import filter from "../stores/filter"
   import Layout from "./Layout.svelte"
   import Header from "./Header.svelte"
   import Search from "./Search.svelte"

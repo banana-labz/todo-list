@@ -1,10 +1,8 @@
 <script>
-	export let id, label, important, done, onDone, onImportant, onDelete
-
+	export let label, important, done, onDone, onImportant, onDelete
   import Delete from "svelte-awesome/icons/trashO"
   import Done from "svelte-awesome/icons/check"
   import Important from "svelte-awesome/icons/exclamation"
-
   import IconButton from "./IconButton.svelte"
 
   const getClass = (important, done) => {
@@ -21,9 +19,9 @@
 <span class="todo-list-item">
   <span class={"todo-list-item-label" + getClass(important, done)}>{label}</span>
   <div class="todo-list-item-actions">
-    <IconButton color="#17A2B8" icon={Important} onClick={onImportant}/>
-    <IconButton color="#28A745" icon={Done} onClick={onDone}/>
-    <IconButton color="#DC3545" icon={Delete} onClick={onDelete}/>
+    <IconButton color="#17A2B8" icon={Important} on:click={onImportant}/>
+    <IconButton color="#28A745" icon={Done} on:click={onDone}/>
+    <IconButton color="#DC3545" icon={Delete} on:click={onDelete}/>
   </div>
 </span>
 

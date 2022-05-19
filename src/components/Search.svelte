@@ -11,6 +11,7 @@
     bind:value={$searchPattern}
     placeholder="search"
     type="text"
+    class="search-input"
   />
   <select class="search-select" bind:value={$filter}>
     {#each FilterOptions as filter}
@@ -27,9 +28,13 @@
     gap: 10px;
   }
 
+  .search-input {
+    height: 28px;
+  }
+
   .search-select {
     width: 104px;
-    height: 26px;
+    height: 28px;
     background-color: transparent;
     border: 1px solid #CED4DA;
     border-radius: 4px;

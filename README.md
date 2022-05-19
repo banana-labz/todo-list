@@ -2,7 +2,7 @@
 
 Every ~~react~~ svelte dev has coded this at least once.
 
-![Untitled](https://user-images.githubusercontent.com/63806195/168490054-feaf0245-157e-4642-bf98-c8f55c853dfe.png)
+![Untitled](https://user-images.githubusercontent.com/63806195/169410817-d74191bb-3a4d-42b7-9df9-c574d507ffc6.png)
 
 ### Installation
 ```bash
